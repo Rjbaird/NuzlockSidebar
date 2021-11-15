@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>Hello, world!</title>
+</head>
+<script>
+    function onImageSuccess(data) {
+        var sprite = document.getElementById('sprite');
+        sprite.src = data[2]
+        var name = document.getElementById('name');
+        name.innerHTML = `You got a ${data[0]}!`
+        var nickname = document.getElementById('nickname');
+        nickname.innerHTML = `Nickname: ${data[1]}`
+    }
+</script>
+
+<body>
+    <div class="card-group">
+        <div class="card" style="width: 100%;">
+            <img id="sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+                class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 id="name" class="card-title">Ditto</h5>
+                <p id="nickname" class="card-text"><small class="text-muted">Tobi</small></p>
+            </div>
+        </div>
+        <div class="btn-group btn-group-lg" role="group" style="width: 100%;">
+            <button style="width: 50%;" type='button'
+                onclick="google.script.run.withSuccessHandler(onImageSuccess).getNewPokemon()" id='mainButton'
+                class="btn btn-outline-primary">New Pokemon</button>
+        </div>
+        <li class="list-group list-group-flush">
+            <a href="https://www.smogon.com/forums/threads/ss-ou-dlc2-viability-ranking-thread-see-post-1517-on-page-61.3674058/"
+                target="_blank" rel="noopener noreferrer" class="list-group-item">SS OU Viability Ranking</a>
+            <a href="https://www.smogon.com/forums/threads/crown-tundra-speed-tiers.3672175/" target="_blank"
+                rel="noopener noreferrer" class="list-group-item">SS OU Speed Tiers</a>
+            <a href="https://calc.pokemonshowdown.com/" target="_blank" rel="noopener noreferrer"
+                class="list-group-item">Damage Calc</a>
+        </li>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+        </script>
+
+</body>
+
+</html>
